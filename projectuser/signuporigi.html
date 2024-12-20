@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Sign Up</title>
+    <link rel="stylesheet" href="signup.css">
+    <script>
+        // Function to calculate and display the end year
+        function calculateEndYear() {
+            const startYear = document.getElementById("signup-duration-start").value;
+            if (startYear) {
+                // Extract the year from the input and calculate the end year
+                const endYear = parseInt(startYear) + 4; // Adding 4 years for the course duration
+                document.getElementById("signup-duration-end").value = endYear; // Set the calculated end year
+            }
+        }
+
+        // Function to toggle between Present and Passed Out student status
+        function toggleStudentStatus() {
+            const studentStatus = document.querySelector('input[name="student-status"]:checked').value;
+            const durationContainer = document.querySelector('.duration-container');
+            const passedOutDurationContainer = document.querySelector('.passed-out-duration-container');
+
+            if (studentStatus === "Present") {
+                durationContainer.style.display = "block";
+                passedOutDurationContainer.style.display = "none";
+            } else {
+                durationContainer.style.display = "none";
+                passedOutDurationContainer.style.display = "block";
+            }
+        }
+
+        // Event listener to toggle student status on change
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initially set the correct visibility based on the radio button
+            toggleStudentStatus();
+
+            // Event listener to handle status change
+            document.querySelectorAll('input[name="student-status"]').forEach(function (radio) {
+                radio.addEventListener('change', toggleStudentStatus);
+            });
+
+            // Event listener for start year to calculate end year for passed-out students
+            document.getElementById("signup-duration-start").addEventListener('change', calculateEndYear);
+        });
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <div class="form-container">
+            <h2>Sign Up</h2>
+            <form id="signup-form" action="#">
+                <label for="signup-name">Name:</label>
+                <input type="text" id="signup-name" name="signup-name" required>
+
+                <label for="signup-roll">Roll No:</label>
+                <input type="text" id="signup-roll" name="signup-roll" required>
+
+                <label for="signup-course">Course:</label>
+                <select id="signup-course" name="signup-course" required>
+                    <option value="" disabled selected>Select Course</option>
+                    <option value="BTech">B.Tech</option>
+                </select>
+
+                <!-- Branch selection -->
+                <div id="branch-container">
+                    <label for="signup-branch">Select Branch:</label>
+                    <select id="signup-branch" name="signup-branch" required>
+                        <option value="" disabled selected>Select Branch</option>
+                        <option value="CSE">Computer Science Engineering</option>
+                        <option value="ECE">Electronics and Communication Engineering</option>
+                        <option value="ME">Mechanical Engineering</option>
+                        <option value="CE">Civil Engineering</option>
+                        <option value="EEE">Electrical and Electronics Engineering</option>
+                    </select>
+                </div>
+
+                <!-- Radio buttons for Student Status -->
+                <label>Student Status:</label>
+                <div class="status-container">
+                    <label for="present">
+                        <input type="radio" id="present" name="student-status" value="Present" checked> Present
+                    </label>
+                    <label for="passed-out">
+                        <input type="radio" id="passed-out" name="student-status" value="PassedOut"> Passed Out
+                    </label>
+                </div>
+
+                <!-- Duration selection for Present students (dropdown) -->
+                <div class="duration-container">
+                    <label for="signup-duration">Select year:</label>
+                    <select id="signup-duration" name="signup-duration" required>
+                        <option value="" disabled selected>Select year</option>
+                        <option value="1">1st Year</option>
+                        <option value="2">2nd Year</option>
+                        <option value="3">3rd Year</option>
+                        <option value="4">4thYear</option>
+                    </select>
+                </div>
+
+                <!-- Duration selection for Passed Out students (Year Picker) -->
+                <div class="passed-out-duration-container" style="display: none;">
+                    <label for="signup-duration-start">Select enrolled Year:</label>
+                    <input type="number" id="signup-duration-start" name="signup-duration-start" required placeholder="2023" min="1900" max="2099">
+
+                    <label for="signup-duration-end">passed out:</label>
+                    <input type="text" id="signup-duration-end" name="signup-duration-end" required readonly>
+                </div>
+
+                <!-- ID card upload -->
+                <label for="signup-id-card">Upload ID Card:</label>
+                <input type="file" id="signup-id-card" name="signup-id-card" accept="image/*" required>
+
+                <label for="signup-password">Create Password:</label>
+                <input type="password" id="signup-password" name="signup-password" required>
+
+                <label for="signup-confirm-password">Confirm Password:</label>
+                <input type="password" id="signup-confirm-password" name="signup-confirm-password" required>
+
+                <button type="submit" class="btn-signup"><a href="homeorigi.html">Sign Up</a></button>
+                <p>Already have an account? <a href="loginorigi.html">Login</a></p>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

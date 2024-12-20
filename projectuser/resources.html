@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Portal</title>
+    <link rel="stylesheet" href="resources.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo"><a href="homeorigi.html">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeo5g3vuX2EcmK_uHRC7ENbcduf25NWKLAzQ&s" style="height: 100%; width: 30%;">
+        </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="homeorigi.html">Home</a></li>
+                <li><a href="GALLERY.HTML">Gallery</a></li>
+                <li><a href="event.html">Events</a></li>
+                <li><a href="#resources-section">Help</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Upload Section -->
+        <section id="upload-section" class="upload-section">
+            <h2>Upload Previous Question Papers, Notes, and References</h2>
+            <form action="#" method="POST" enctype="multipart/form-data">
+                <label for="resource-title">Title of the Resource:</label>
+                <input type="text" id="resource-title" name="resource-title" required>
+
+                <label for="resource-type">Select Resource Type:</label>
+                <select id="resource-type" name="resource-type" required>
+                    <option value="question-paper">Previous Question Paper</option>
+                    <option value="reference">Reference Book</option>
+                    <option value="notes">Study Notes</option>
+                </select>
+
+                <label for="resource-file">Upload File:</label>
+                <input type="file" id="resource-file" name="resource-file" accept=".pdf, .doc, .docx, .txt" required>
+
+                <button type="submit" class="btn-upload">Upload Resource</button>
+            </form>
+        </section>
+
+        <!-- Resources Section -->
+        <section id="resources-section" class="resources-section">
+            <h2>Available Resources</h2>
+            <div class="resource-card">
+                <h3>Previous Question Paper: Computer Science 2023</h3>
+                <p>Uploaded by: John Doe (CSE 2018)</p>
+                <a href="#" class="resource-link">Download</a>
+            </div>
+
+            <div class="resource-card">
+                <h3>Study Notes: Electrical Engineering</h3>
+                <p>Uploaded by: Jane Smith (EEE 2020)</p>
+                <a href="#" class="resource-link">Download</a>
+            </div>
+
+            <div class="resource-card">
+                <h3>Reference Book: Data Structures</h3>
+                <p>Uploaded by: Alex Brown (CSE 2019)</p>
+                <a href="#" class="resource-link">Download</a>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact-section" class="contact-section">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or suggestions, feel free to reach out to us.</p>
+            <p>Email: kitsgnt@gmail.com</p>
+            <p>Phone: 91863-2286666</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 College Alumni Portal. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

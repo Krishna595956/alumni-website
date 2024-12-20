@@ -1,0 +1,215 @@
+/* General Page Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+}
+
+/* Navigation Bar Styles */
+header {
+    background-color: #333;
+    padding: 1rem;
+    color: #f4f4f4;
+    font-style: italic;
+    border-left: 10px;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navbar a:hover {
+    color: #4CAF50;
+}
+
+/* Main Container */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Profile Section Styles */
+.profile-section {
+    background-color: #ffffff;
+    padding: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.profile-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-image {
+    margin-right: 20px;
+}
+
+.profile-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid #4CAF50;
+}
+
+.profile-details {
+    text-align: left;
+}
+
+.profile-details h3 {
+    font-size: 24px;
+    color: #333;
+}
+
+.profile-details ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.profile-details li {
+    font-size: 16px;
+    color: #777;
+    margin: 5px 0;
+}
+
+.profile-details li strong {
+    color: #333;
+}
+
+/* Home Section */
+.home-section {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.home-section h1 {
+    font-size: 36px;
+    color: #333;
+}
+
+.home-section p {
+    font-size: 18px;
+    color: #777;
+}
+
+/* Section Titles */
+h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Card Layout */
+.resource-card, .event-card, .card {
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 8px;
+}
+
+.resource-card h3, .event-card h3, .card h3 {
+    font-size: 24px;
+    color: #333;
+}
+
+.resource-card p, .event-card p, .card p {
+    font-size: 16px;
+    color: #777;
+}
+
+.resource-card a, .event-card a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.resource-card a:hover, .event-card a:hover {
+    text-decoration: underline;
+}
+
+/* Gallery Section */
+.gallery-section {
+    padding: 50px 0;
+    background-color: #ffffff;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Updates and Notifications Section */
+.updates-section .card, .events-section .card {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive Design for Profile Section */
+@media (max-width: 768px) {
+    .profile-card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-image {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
+
+/* Responsive Design for Home Section */
+@media (max-width: 768px) {
+    .home-section h1 {
+        font-size: 28px;
+    }
+
+    .home-section p {
+        font-size: 16px;
+    }
+}
